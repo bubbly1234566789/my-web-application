@@ -1,0 +1,43 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const viewContainer = document.getElementById('viewContainer');
+
+    // Home view content
+    const homeView = `
+        <section>
+            <h2>Home</h2>
+            <p>Welcome to the Home view!</p>
+            <button id="saveDataBtn">Save Data</button>
+        </section>
+    `;
+
+    // About view content
+    const aboutView = `
+        <section>
+            <h2>About</h2>
+            <p>This is the About view.</p>
+        </section>
+    `;
+
+    // Load Home view by default
+    viewContainer.innerHTML = homeView;
+
+    document.getElementById('homeViewBtn').addEventListener('click', () => {
+        viewContainer.innerHTML = homeView;
+        attachHomeViewEvents();
+    });
+
+    document.getElementById('aboutViewBtn').addEventListener('click', () => {
+        viewContainer.innerHTML = aboutView;
+    });
+
+    // Attach events to Home view elements
+    function attachHomeViewEvents() {
+        document.getElementById('saveDataBtn').addEventListener('click', () => {
+            localStorage.setItem('myData', 'This is some saved data.');
+            alert('Data saved to local storage!');
+        });
+    }
+
+    // Attach events for the initially loaded Home view
+    attachHomeViewEvents();
+});
