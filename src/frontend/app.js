@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const viewContainer = document.getElementById('viewContainer');
-
     
     const homeView = `
         <section>
@@ -9,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <button id="saveDataBtn">Save Data</button>
         </section>
     `;
-
 
     const aboutView = `
         <section>
@@ -30,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
         viewContainer.innerHTML = aboutView;
     });
 
-
     function attachHomeViewEvents() {
         document.getElementById('saveDataBtn').addEventListener('click', () => {
             localStorage.setItem('myData', 'This is some saved data.');
@@ -38,6 +35,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Attach events for the initially loaded Home view
     attachHomeViewEvents();
 });
