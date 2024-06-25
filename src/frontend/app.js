@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const viewContainer = document.getElementById('viewContainer');
 
-    // Home view content
+    
     const homeView = `
         <section>
             <h2>Home</h2>
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </section>
     `;
 
-    // About view content
+
     const aboutView = `
         <section>
             <h2>About</h2>
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </section>
     `;
 
-    // Load Home view by default
+
     viewContainer.innerHTML = homeView;
 
     document.getElementById('homeViewBtn').addEventListener('click', () => {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         viewContainer.innerHTML = aboutView;
     });
 
-    // Attach events to Home view elements
+
     function attachHomeViewEvents() {
         document.getElementById('saveDataBtn').addEventListener('click', () => {
             localStorage.setItem('myData', 'This is some saved data.');
